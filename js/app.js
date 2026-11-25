@@ -61,12 +61,6 @@ function generarHTML(lista) {
  * Ninguna de estas funciones modifica la lista que recibe.
  * --------------------------------------------------------------- */
 
-const estado = {
-  categoria: "todas",
-  texto: "",
-  orden: "nombre-asc"
-};
-
 function crearCard(item) {
   const valor = item[configuracion.campoOrden];
   const etiqueta = configuracion.etiquetaValor || configuracion.campoOrden;
