@@ -1,11 +1,11 @@
 # Entrega - Evaluación 2
 
-Nombre: 
-Tema número: 
-Tema: 
-Empresa: 
+Nombre: Juan Jose Campuzano Jimenez
+Tema número: 7
+Tema: Gimnasio
+Empresa: Pulso Fitness
 
-Repositorio: https://github.com/USUARIO/evaluacion2-maquetacion
+Repositorio: https://github.com/JJLCV-tech/evaluacion2-maquetacion.git
 Sitio publicado: https://USUARIO.github.io/evaluacion2-maquetacion/
 
 ## Resultado del verificador
