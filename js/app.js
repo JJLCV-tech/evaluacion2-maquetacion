@@ -28,21 +28,32 @@ const estado = {
  * Issue #3 - Datos a tarjetas
  * --------------------------------------------------------------- */
 
-// TODO: devuelve un TEXTO con el HTML de UNA tarjeta.
-// Debe tener: un article con clase card (dentro de una columna si tu
-// #catalogo no usa row-cols), la imagen con src = item.imagen y un alt
-// descriptivo, card-body, un h3 con clase card-title y el nombre,
-// un badge con la categoría, la descripción, el valor de
-// item[configuracion.campoOrden] con su etiqueta, y tus 2 campos propios.
 function crearCard(item) {
+  const valor = item[configuracion.campoOrden];
+  const etiqueta = configuracion.etiquetaValor || configuracion.campoOrden;
 
+  return `
+    <div class="col">
+      <article class="card rounded-0 border-0 h-100">
+        <img src="${item.imagen}" class="card-img-top rounded-0" alt="Clase de ${item.nombre}">
+        <div class="card-body d-flex flex-column">
+          <span class="badge badge-categoria align-self-start mb-2">${item.categoria}</span>
+          <h3 class="card-title h5">${item.nombre}</h3>
+          <p class="card-text">${item.descripcion}</p>
+          <p class="valor-clase mb-2">${etiqueta}: ${valor}</p>
+          <p class="card-text small mb-1">Instructor: ${item.instructor}</p>
+          <p class="card-text small mb-0">Nivel: ${item.nivel}</p>
+        </div>
+      </article>
+    </div>
+  `;
 }
 
-// TODO: devuelve el HTML de TODAS las tarjetas de la lista (map + join).
-// Si la lista está vacía, devuelve un mensaje (por ejemplo un <p>) que
-// diga que no hay resultados.
 function generarHTML(lista) {
-
+  if (!Array.isArray(lista) || lista.length === 0) {
+    return `<p class="col-12">No hay resultados para la búsqueda o categoría seleccionada.</p>`;
+  }
+  return lista.map(crearCard).join("");
 }
 
 /* ---------------------------------------------------------------
